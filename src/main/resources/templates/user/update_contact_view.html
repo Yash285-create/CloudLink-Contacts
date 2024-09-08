@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::div},~{::title},~{::script})}">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modify Contact</title>
+</head>
+
+<body>
+
+	<div th:replace="~{user/sidebar :: sidebar}"> </div>
+
+	<div class="sm:pl-64 pt-20" style="height: 1000px">
+		<div class="grid grid-cols-12">
+			<div class="col-span-3"></div>
+			<div class="col-span-12 md:col-span-6">
+				<div
+					class="card block p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+
+					<div th:replace="~{message :: message}"> </div>
+
+					<h1 class="text-2xl font-semibold">Modify Contact</h1>
+					<p class="text-gray-500 mt-2">Contacts will be stored on cloud...</p>
+
+
+					<form th:action="@{'/user/contacts/update/'+${id}}" method="post" th:object="${contactForm}"
+						enctype="multipart/form-data" class="mt-5">
+
+						<div class="mb-3">
+
+							<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+								class="text-red-600 p-2 font-bold text-left"></p>
+
+							<label for="input-group-1"
+								class="block mb-2  text-sm font-medium text-gray-900 dark:text-white"></label>
+							<div class="relative mb-6">
+
+								<div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+									<i class="fa-solid w-4 h-4 fa-user"></i>
+								</div>
+								<input type="text" th:field="*{name}" id="input-group-1"
+									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									placeholder="enter name">
+
+							</div>
+
+
+						</div>
+
+
+
+						<div class="mb-3">
+							<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+								class="text-red-600 p-2 font-bold text-left"></p>
+							<label for="input-group-1"
+								class="block mb-2  text-sm font-medium text-gray-900 dark:text-white"></label>
+							<div class="relative mb-6">
+
+								<div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+									<i class="fa-solid w-4 h-4 fa-envelope"></i>
+								</div>
+								<input type="text" th:field="*{email}" id="input-group-1"
+									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									placeholder="email@xyz.com">
+							</div>
+						</div>
+
+
+						<div class="mb-3">
+							<p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"
+								class="text-red-600 p-2 font-bold text-left"></p>
+
+							<label for="input-group-1"
+								class="block mb-2  text-sm font-medium text-gray-900 dark:text-white"></label>
+							<div class="relative mb-6">
+
+								<div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+									<i class="fa-solid w-4 h-4 fa-phone"></i>
+								</div>
+								<input type="text" th:field="*{phoneNumber}" id="input-group-1"
+									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									placeholder="94256XXXXX">
+							</div>
+						</div>
+
+
+
+						<div class="mb-3">
+							<label for="input-group-1"
+								class="block mb-2  text-sm font-medium text-gray-900 dark:text-white"></label>
+							<div class="relative mb-6">
+
+								<div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+									<i class="fa-solid w-4 h-4 fa-house"></i>
+								</div>
+								<input type="text" th:field="*{address}" id="input-group-1"
+									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									placeholder=" address... lane/street/ward/city/state/country">
+							</div>
+						</div>
+
+
+
+						<div class="mb-3">
+							<label for="input-group-1"
+								class="block mb-2  text-sm font-medium text-gray-900 dark:text-white"></label>
+							<div class="relative mb-6">
+
+								<div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+									<i class="fa-solid w-4 h-4 fa-circle-info"></i>
+								</div>
+								<input type="text" th:field="*{description}" id="input-group-1"
+									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									placeholder="contact info.. like Date-of-birth / Anniversary / any special date ">
+							</div>
+						</div>
+
+
+
+
+						<div class="flex">
+							<div class="w-full">
+
+								<div class="mb-3">
+									<label for="input-group-1"
+										class="block mb-2  text-sm font-medium text-gray-900 dark:text-white"></label>
+									<div class="relative mb-6">
+
+										<div
+											class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+											<i class="fa-solid w-4 h-4 fa-earth-americas"></i>
+										</div>
+										<input type="text" th:field="*{websiteLink}" id="input-group-1"
+											class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+											placeholder="website link">
+									</div>
+								</div>
+
+
+							</div>
+							<div class="w-full">
+
+								<div class="mb-3 ml-2">
+									<label for="input-group-1"
+										class="block mb-2  text-sm font-medium text-gray-900 dark:text-white"></label>
+									<div class="relative mb-6">
+
+										<div
+											class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+											<i class="fa-solid w-4 h-4 fa-hashtag"></i>
+										</div>
+										<input type="text" th:field="*{linkedInLink}" id="input-group-1"
+											class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+											placeholder="social media accounts">
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div>
+							<label class="block mb-2 text-left font-medium text-gray-900 dark:text-white"
+								for="file_input">Contact Image</label>
+							<input id="image_file_input" th:field="*{picture}"
+								class="block  w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+								type="file">
+							<img class="max-h-52 mx-auto rounded-lg shadow m-3" th:src="*{image}"
+								id="upload_image_preview" alt="" />
+
+						</div>
+
+
+						<div class="mt-7">
+
+							<div class="flex items-center mb-4">
+								<input id="default-checkbox" th:field="*{favorite}" type="checkbox" value=""
+									class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+								<label for="default-checkbox"
+									class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Marked as
+									favourite contact</label>
+							</div>
+
+						</div>
+
+
+						<div class="button-container text-center">
+
+							<button type="submit"
+								class="px-3 py-2 rounded bg-gray-900 text-white hover:bg-gray-800 ">Update</button>
+
+							<button type="reset"
+								class="px-3 py-2 rounded bg-gray-900 text-white hover:bg-gray-800 ">Reset</button>
+
+						</div>
+
+
+
+
+					</form>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+
+
+	<script data-th-src="@{'/js/admin.js'}"></script>
+
+</body>
+
+</html>

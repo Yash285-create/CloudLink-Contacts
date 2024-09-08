@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::div},~{::title},~{::script})}">
+	
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+   
+  <div>
+	  
+	   
+<section class="bg-pink-600 text-black dark:bg-gray-700 dark:text-white">
+        <div class="container mx-auto flex flex-col items-center text-center">
+            <h1 class="text-5xl text-white font-bold dark:text-white">Manage Your Contacts Seamlessly</h1>
+            <p class="mt-4 text-xl dark:text-white text-white">Keep all your contacts organized, searchable, and accessible with our intuitive Cloud-Link Contacts app.</p>
+            <a th:href="@{/register}" class="mt-8 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">Get Started for Free</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-100 mt-4 dark:bg-gray-800 dark:text-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold dark:text-white">Key Features</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-white">Powerful tools designed to help you manage your contacts efficiently.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 shadow-lg rounded-lg dark:bg-gray-600 dark:text-white">
+                    <div class="bg-blue-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-3-3.87M4 3v18m0-2a4 4 0 014-4h12m-4 4v2a4 4 0 01-4 4v2M6 3h12v4H6V3zm-3 8h18M4 7V3h2v4H4z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mt-6 dark:text-white">Organize Contacts</h3>
+                    <p class="mt-4 text-gray-600 dark:text-white">Categorize contacts for easier management, create custom labels, and group contacts.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 shadow-lg rounded-lg dark:bg-gray-600 dark:text-white">
+                    <div class="bg-blue-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m0 0H7m1 0h8m0 0l1 1m0-4l-4 4m-4-4l4 4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mt-6 dark:text-white">Sync Across Devices</h3>
+                    <p class="mt-4 text-gray-600 dark:text-white">Access your contacts from any device with automatic sync and cloud storage.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 shadow-lg rounded-lg dark:bg-gray-600 dark:text-white">
+                    <div class="bg-blue-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10 12h6m-6 4h6m-3 4v-4m0-4V4m-7 8v-4M7 4v16m10-16v16m-7-6h6"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mt-6 dark:text-white">Secure and Private</h3>
+                    <p class="mt-4 text-gray-600 dark:text-white">Ensure the safety and privacy of your contacts with robust security measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-white py-20 dark:text-white dark:bg-gray-700">
+        <div class="container mx-auto flex flex-col items-center text-center dark:bg-gray-700 dark:bg-gray-700 dark:text-white mt-4">
+            <h3 class="text-4xl font-bold text-gray-900 dark:text-white">Ready to Simplify Your Contact Management?</h3>
+            <p class="mt-4 text-lg text-gray-600 dark:bg-gray-700 dark:text-white">Start organizing your contacts today and experience seamless contact management.</p>
+            <a th:href="@{/register}" class="mt-8 bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700">Sign Up Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <p>&copy; 2024 Cloud-Link Contacts. All rights reserved.</p>
+            <div class="space-x-6">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+   
+   </body>
+   <script></script>
+</html>
+	

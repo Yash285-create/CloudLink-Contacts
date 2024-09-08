@@ -1,0 +1,45 @@
+<-- pura html hi replace kr rahe hai jo bhi isko call karega 
+    jo bhi isko call karega usko uska title and body jo usko chahiye wo bhejna padega 
+    yaha pai replace ho jayegi
+  -->
+<!DOCTYPE html>
+<html  th:fragment="parent(component,title,script)">
+
+<head>
+	<title th:replace="${title}"> Base Page</title>
+
+	<link rel="stylesheet" th:href="@{'/css/output.css'}" />
+	<link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="dark:bg-gray-800 bg-gray-100 p-0 dark:text-white">
+
+<!-- it executes when user is logged in  -->
+    <div th:if="${loggedInUser}" class="">
+	<div th:replace="~{user/user_navbar::user-navbar}"> </div>
+	</div>
+
+<!-- it executes when user is not logged in  -->
+	<div th:unless="${loggedInUser}" class="dark">
+	<div th:replace="~{navbar::navbar}"> </div>
+	</div>
+<div class="p-4"> 
+
+<section th:replace="${component}" > This is Base page content</section>	
+	
+</div>
+	<!--
+	<footer class="p-4">
+		Footter : This is Fotter
+	</footer>
+	-->
+	
+	<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script th:src="@{/js/script.js}"></script>
+	<th:block th:replace="${script}"></th:block>
+</body>
+
+</html>

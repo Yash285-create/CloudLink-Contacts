@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::div},~{::title},~{::script})}">
+	
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${loggedInUser.name}+' | Profile'">Profile Page</title>
+</head>
+<body>
+	
+	
+	<div th:replace="~{user/sidebar :: sidebar}"> </div>
+   
+  
+  <div class="sm:pl-64 pt-20">
+	
+	
+	<div class="flex items-center justify-center md:pt-32 flex-col">
+          <!--  profie card -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl w-full">
+            <div class="flex flex-col items-center">
+                <img data-th-src="@{${loggedInUser.profilePic}}" src="path/to/profilePic.jpg" alt="Profile Photo" class="w-44 h-44 rounded-full shadow-lg object-cover mb-4">
+                <h2 class="text-2xl font-semibold mb-2" data-th-text=${loggedInUser.name}>User Name</h2>
+                <p class="text-gray-600 mb-2 dark:text-white" data-th-text="${loggedInUser.email}">user.email@example.com</p>
+                <p class="text-gray-600 mb-2 dark:text-white" data-th-text="${loggedInUser.phoneNumber}">123-456-7890</p>
+                <p class="text-gray-600 mb-4 text-center dark:text-white" data-th-text="${loggedInUser.about}">About the user...</p>
+                <div class="w-full flex justify-between">
+                    <p class="text-sm text-gray-500 dark:text-white">Email Verified: <span class="font-medium text-gray-700 dark:text-white" id="email-verified" data-th-text="${loggedInUser.emailVerified ? 'YES':'NO'}">No</span></p>
+                    <p class="text-sm text-gray-500 dark:text-white">Phone Verified: <span class="font-medium text-gray-700 dark:text-white" id="phone-verified" data-th-text="${loggedInUser.mobileVerified ? 'YES':'NO'}">No</span></p>
+                </div>
+            </div>
+        </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </div>
+   
+  
+   </body>
+   <script></script>
+</html>
